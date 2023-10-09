@@ -90,9 +90,11 @@ class _MyHomePageState extends State<MyHomePage>
           FloatingActionButton(
             backgroundColor: primaryColor,
             onPressed: () {},
-            child: const Icon(
+            child: Icon(
               Icons.photo_camera,
-              color: Colors.black,
+              color: theme.brightness == Brightness.dark
+                  ? Colors.black
+                  : Colors.white,
             ),
           )
         ],
@@ -101,9 +103,10 @@ class _MyHomePageState extends State<MyHomePage>
       return FloatingActionButton(
         onPressed: () {},
         backgroundColor: primaryColor,
-        child: const Icon(
+        child: Icon(
           Icons.add_call,
-          color: Colors.black,
+          color:
+              theme.brightness == Brightness.dark ? Colors.black : Colors.white,
         ),
       );
     } else if (_tabController.index == 1) {
@@ -113,9 +116,10 @@ class _MyHomePageState extends State<MyHomePage>
               MaterialPageRoute(builder: (context) => const NewChatScreen()));
         },
         backgroundColor: primaryColor,
-        child: const Icon(
+        child: Icon(
           Icons.message,
-          color: Colors.black,
+          color:
+              theme.brightness == Brightness.dark ? Colors.black : Colors.white,
         ),
       );
     } else {
